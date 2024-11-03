@@ -1,0 +1,496 @@
+@font-face {
+    font-display: swap; 
+    font-family: 'Poppins';
+    font-weight: 300;
+    src: url('../fonts/poppins-v21-latin-300.woff2') format('woff2'); }
+@font-face {
+    font-display: swap; 
+    font-family: 'Poppins';
+    font-weight: 400;
+    src: url('../fonts/poppins-v21-latin-regular.woff2') format('woff2'); }
+@font-face {
+    font-display: swap; 
+    font-family: 'Poppins';
+    font-weight: 600;
+    src: url('../fonts/poppins-v21-latin-600.woff2') format('woff2'); }
+@font-face {
+    font-display: swap; 
+    font-family: 'Poppins';
+    font-weight: 900;
+    src: url('../fonts/poppins-v21-latin-900.woff2') format('woff2'); }
+
+:root{
+    --color-light: #EFE1D1;
+    --color-dark: #31261A;
+    --color-brand: #A78295;
+}
+
+body{
+    background-color: var(--color-light);           /*колір фону*/
+    color: var(--color-dark);                       /*колір тексту*/
+    font-family: 'Poppins','Chalkduster',sans-serif;/*запасні шрифти*/
+    font-size: 18px;                                /*розмір тексту*/
+    font-weight: 400;                               /*жирність шрифту*/
+    line-height: 1.5;                               /*відступи між лінійками тексту*/
+    margin: 0;                                      /*зовнішні відступи (верх-низ, ліве-праве)*/
+}
+
+.container{
+    width: 100%;                                    /*ширина*/
+    max-width: 1288px;                              /*максимальна ширина*/
+    margin: 0 auto;                                 /*відступи об'єкта від об'єкта*/
+    padding: 0 24px;                                /*внітрішні відступи*/
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin-top: 0;
+}
+
+a{
+    display: inline-block;                          /*відображення об'єкта*/
+}
+
+address{
+    font-style: normal;                             /*курсив*/
+}
+/*global*/
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;                          /*у списту є кола (або цифри напочатку), це щоб ними керувати*/
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;                         /**/
+}
+
+.section{
+    padding: 48px 0;
+}
+
+.visually-hidden{
+    position:absolute;                              /**/
+    left:-10000px;                                  /**/
+    top:auto;                                       /**/
+    width:1px;                                      /**/
+    height:1px;                                     /**/
+    overflow:hidden;                                /*встановлює бажану поведінку, коли вміст не вміщується в поле заповнення елемента*/
+}
+
+/*button*/
+.button{
+    padding: 16px 32px;                             /**/
+    color: var(--color-light);                      /**/
+    background: var(--color-brand);                 /**/
+    border: 2px solid var(--color-dark);            /**/
+    border-radius: 8px;                             /**/
+    cursor: pointer;                                /**/
+    font-weight: 600;                               /**/
+}
+
+.button:hover{                                      /*курсор і як виглядає кнопка коли на неї наводить*/
+    color: var(--color-brand);                       /**/
+    background-color: transparent;                  /**/
+}
+/*link*/
+.link{                                                  
+    color: var(--color-light);                      /**/
+    text-decoration: none; 
+    transition: color .3s;                         /*підкреслення тексту*/
+}
+
+.link:hover{                                        /**/
+    color: var(--color-brand);                      /**/
+}
+
+/*header*/
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 32px;
+}
+
+.header-container{
+    display: flex;                                  /**/
+    align-items: center;                            /*контролює вирівнювання елементів в межах їхніх областей сітки*/
+    gap: 40px;                                     /*встановлює проміжки між рядками та стовпцями*/
+}
+
+.header-nav{
+    flex-grow: 1;
+    align-items: center;
+    display: flex;
+    gap: 40px;
+}
+
+.header-ul{
+    display: flex;
+    gap: 64px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+/*hero section*/
+.hero-section{
+    padding: 272px 0;
+    background-image: linear-gradient(
+        102.76deg,
+        rgba(18,18,17,0.78) 2.03%,
+        rgba(18,18,17,0.6) 58.46%,
+        rgba(18,18,17,0) 90.36%
+    ),
+    url('../images/барна\ стійка.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;  /*може видалю*/
+}
+
+.hero-title{
+    margin-bottom: 0;
+    color: var(--color-light);
+    text-align: center;
+    font-size: 128px;
+    font-weight: 900;
+}
+
+.hero-title .accent{
+    color: var(--color-brand);
+}
+
+/*adventages section*/
+
+.adventages-section{
+    padding: 16px 0;
+    background-color: var(--color-brand);
+}
+
+.adventages{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.adventages-list{
+    color: var(--color-light);
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.section-title{
+    color: var(--color-dark);
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1.3;
+}
+
+.section-title.centered{
+    text-align: center;
+}
+
+/*history section*/
+.history-title{
+    margin-bottom: 42px;
+}
+
+.history-section{
+    padding-top: 96px;
+}
+
+.history-container{
+    display: flex;
+    /*justify-content: space-between;*/
+    gap: 50px;
+}
+
+.history-content{
+    max-width: 710px;
+}
+
+.history-text span{
+    text-transform: uppercase;
+    color: var(--color-brand);
+    font-weight: 600;
+}
+
+/*staff section*/
+.staff-main-title{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto 80px;
+}
+
+.line {
+    border-left: 2px solid var(--color-dark);
+    content: '';
+}
+
+.staff-title{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.staff-text{
+    margin-bottom: 0px;
+    max-width: 260px;
+}
+
+.staff-card{
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+.staff-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/*
+.staff-item{
+    flex-basis: calc((100% - 30PX) /2 );
+}
+*/
+.phooto-staff{
+    border-radius: 32px;
+    z-index: 3;
+}
+
+/*треба подумати*/
+.lili::before{
+    opacity: 10%;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    right: 200px;
+    width: 140px;
+    height: 155px;
+    background-image: url('../images/чашка\ для\ баристи.png');
+    content: '';
+}
+
+.vlad::before{
+    opacity: 10%;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    right: 210px;
+    width: 140px;
+    height: 175px;
+    background-image: url('../images/пляшка\ для\ бармена.png');
+    content: '';
+    transform: scale(-1, 1)
+}
+
+/*bar section*/
+.bar-main-title{
+    margin-bottom: 80px;
+}
+
+.bar-title{
+    font-size: 64px;
+    font-weight: 400;
+}
+
+.bar-list{
+    display: flex;
+    gap: 20px;
+}
+
+.card{
+    flex-basis: calc((100%-40px)/3);
+}
+
+.bar-card{
+    height: 444px;
+    width: 350px;
+    padding: 24px;
+    background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0)55.21%,
+        rgba(255, 255, 255, 0.71)72.92%,
+        var(--color-light) 100%
+    );
+    border: 1px solid lightgray;
+    border-radius: 16px;
+    transition: transform .3s;
+}
+
+.bar-card:hover{
+transform: scale(1.05);
+}
+
+.bar-menu{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.bar-container{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/*bar-button*/
+.button-bar{
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    flex-shrink: 0;
+    fill: var(--color-dark);
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--color-dark);
+    cursor: pointer;
+}
+
+.button-bar.next{
+transform: rotate(180deg);
+}
+
+.button-bar:hover{
+    opacity: 50%;
+    background-color: var(--color-brand);
+    fill: var(--color-dark);
+}
+
+/*contact section*/
+.contact-section{
+    padding-bottom: 96px;
+}
+
+.contact-container{
+    display: flex;
+    gap: 32px;
+}
+
+.contact-map{
+    flex-shrink: 0;
+    border: none;
+    border-radius: 16px;
+}
+
+.contact-title{
+    margin-bottom: 16px;
+}
+
+/*footer*/
+.footer{
+    padding: 32px 0;
+}
+
+.footer-container{
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav, .footer-address{
+    display: flex;
+    flex-basis: 50%;
+    gap: 20px;
+}
+
+.footer-logo, .footer-menu{
+    flex-grow: 1;
+}
+
+.footer-logo{
+    z-index: 2;
+}
+
+.address-list, .footer-copyright{
+    flex-grow: 1;
+}
+
+.address-link{
+    color: var(--color-light);
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.address-link:hover{
+    color: var(--color-brand);
+}
+
+.address-icon{
+    fill: var(--color-light);
+}
+
+.address-copyright{
+    font-size: 14px;
+}
+
+.footer{
+    background-image: url('../images/background-footer.png');
+    background-color: var(--color-brand);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.footer::before,
+.footer::after{
+    position: absolute;
+    bottom: 0;
+    background-repeat: no-repeat;
+    content: '';
+}
+
+.footer::before{
+    width: 300px;
+    height: 220px;
+    left: 0;
+    background-image: url('../images/м_ята.png');
+}
+
+.footer::after{
+    width: 240px;
+    height: 160px;
+    right: 0;
+    background-image: url('../images/лід.png');
+}
+
+/*modal*/
+.backdrop{
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(167,130,149, 0.5);
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.backdrop.is-hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal{
+    width: 100%;
+    max-width: 880px;
+    height: 100%;
+    max-height: 880px;
+    padding: 128px;
+    background-color: #FAF4EA;
+    border-radius: 32px;
+    position: relative;
+}
+
+.btn-close{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
